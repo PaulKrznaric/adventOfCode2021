@@ -17,6 +17,7 @@ def day2_part1():
             raise Exception("Input is invalid. Double check what you're doing ya dunce.")
     return [x, z]
 
+
 def moveForward(x, distance):
     return x + distance
 
@@ -33,10 +34,10 @@ def moveUp(z, distance):
 
 def day2_part2():
     directions = readStringFile("day2.txt")
-    #x, z, aim
-    coords = [0,0,0]
-    for dir in directions:
-        direction = dir.split()
+    # x, z, aim
+    coords = [0, 0, 0]
+    for direction in directions:
+        direction = direction.split()
         if direction.__getitem__(0) == 'forward':
             coords = moveForward_2(coords, int(direction.__getitem__(1)))
         elif direction[0] == 'down':
@@ -62,4 +63,3 @@ def moveDown_2(coords, distance):
 def moveUp_2(coords, distance):
     coords[2] = coords[2] - distance
     return coords
-
